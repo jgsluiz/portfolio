@@ -41,7 +41,7 @@ h1,h2{margin:0;font-weight:400;font-size:clamp(34px,5.4vw,56px);line-height:1.1;
 #menu .sub{font-family:"Structed Beginning","Neuropolitical","Josefin Sans",sans-serif;font-size:clamp(13px,1.5vw,21px);color:#d6d3d5;margin:6px 0 0;text-shadow:0 1px 3px #000,0 2px 10px rgba(0,0,0,.9)}
 .mnav{position:absolute;z-index:6;display:flex;justify-content:space-between;align-items:center}
 .mnav a{position:relative;font-size:clamp(17px,2.2vw,32px);letter-spacing:.12em;color:#d6d3d5;text-shadow:0 2px 6px rgba(0,0,0,.9);padding:10px 6px;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent}
-@media(max-width:600px){.mnav a{font-size:13px;letter-spacing:.06em;padding:10px 4px}}
+@media(max-width:600px){.mnav a{font-size:11.5px;letter-spacing:.02em;padding:10px 3px}}
 .mnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#fff;transform:scaleX(0);transition:transform .25s}
 .mnav a:hover,.mnav a:focus-visible{color:#fff;text-shadow:0 0 14px rgba(255,255,255,.8)}
 .mnav a:hover::after,.mnav a:focus-visible::after{transform:scaleX(1)}
@@ -350,7 +350,7 @@ function layout(){
   var ang=(Math.atan2(-.958*H,.858*W)+Math.atan2(-.941*H,.869*W))/2*180/Math.PI;
   var h=document.getElementById("mhead");h.style.left=.3385*W+"px";h.style.top=.6775*H+"px";h.style.transform="translate(-50%,-56%) rotate("+ang+"deg)";
   var a2=(Math.atan2(-.038*H,.5402*W)+Math.atan2(-.046*H,.6252*W))/2*180/Math.PI;
-  var n=document.getElementById("mnav");var nw=Math.max(.46*W,W<600?.6*W:0);n.style.left=(W-.02*W-nw/2)+"px";n.style.top=.667*H+"px";n.style.width=nw+"px";n.style.transform="translate(-50%,-50%) rotate("+a2+"deg)";
+  var n=document.getElementById("mnav");var nw=W<600?.5*W:.46*W;n.style.left=(W<600?.485*W+nw/2:W-.02*W-nw/2)+"px";n.style.top=.667*H+"px";n.style.width=nw+"px";n.style.transform="translate(-50%,-50%) rotate("+a2+"deg)";
 }
 if(window.ResizeObserver)new ResizeObserver(layout).observe(document.getElementById("menu"));
 window.addEventListener("resize",layout);layout();
